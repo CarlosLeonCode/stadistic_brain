@@ -80,10 +80,8 @@ export default function Game(){
                 </Content>
                 </Layout>
 
-                <Modal title="Basic Modal" visible={showModal} onOk={() => startGame()} onCancel={() => setShowModal(false)}>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                <Modal title="Indicaciones" visible={showModal} onOk={() => startGame()} onCancel={() => setShowModal(false)}>
+                    <p>{ Data.exercises.combination.long_statement }</p>
                 </Modal>
             </Layout>
         </>

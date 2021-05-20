@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 // components
-import { Card, Image, Row, Col, Divider, Tooltip, Button, Modal } from 'antd';
+import { Card, Image, Row, Col, Divider, Tooltip, Button } from 'antd';
 // icons 
 import { QuestionCircleOutlined } from '@ant-design/icons'
 // Data 
@@ -13,7 +13,7 @@ const runners = Data.runners
 
 export default function GameBoard(props){
 
-    const { startGame, gameStarted, evaluate, showModal } = props
+    const { gameStarted, evaluate, showModal } = props
 
     // states 
     const [ roundAnswer, setRoundAnswer ] = useState([])
@@ -159,7 +159,7 @@ export default function GameBoard(props){
                                         src={character.img_path}
                                         key={ character.name }
                                         preview={false}
-                                        className="select-character-img active"
+                                        className="select-character-img"
                                         id={`select_${character.name}`}
                                         onClick={(e) => addRunnerToAnswer(e)}
                                     />
