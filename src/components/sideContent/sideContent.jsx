@@ -16,7 +16,7 @@ export default function SideContent(props){
             <section className="wrapper-details">
                 {/* Attempts */}
                 <div className="detail-group">
-                    <span>Intentos</span>: <span>{gameAttemps == 0 ? gameAttemps : gameAttemps - 1}</span>
+                    <span>Intentos</span>: <span>{gameAttemps}</span>
                 </div>
 
                 <div className="detail-group">
