@@ -40,7 +40,7 @@
 }
 
 .answerDetailsWrapper{
-    background-color: #006d75;
+    background-color: #ddd;
     width: 100%;
     height: 100%;
     border-radius: 8px;
@@ -49,4 +49,5 @@
     height: 9rem;
     max-height: 9rem;
     overflow: auto;
+    box-shadow: inset 0 0 5px #ccc;
 }

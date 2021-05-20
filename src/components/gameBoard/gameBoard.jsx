@@ -13,7 +13,7 @@ const runners = Data.runners
 
 export default function GameBoard(props){
 
-    const { startGame, gameStarted, evaluate } = props
+    const { startGame, gameStarted, evaluate, showModal } = props
 
     // states 
     const [ roundAnswer, setRoundAnswer ] = useState([])
@@ -63,7 +63,7 @@ export default function GameBoard(props){
         try{
             if(gameStarted){
                 // If already have two answers, then validate them 
-                if(roundAnswer.length == 2){
+                if(roundAnswer.length === 2){
                     const response = evaluate(roundAnswer)
                     // Validating
                     if(!response.game_won){
@@ -93,6 +93,7 @@ export default function GameBoard(props){
                             style={{ borderRadius: '8px', padding: '0.5rem' }}
                             src={character.img_path}
                             key={ character.name }
+                            preview={ false }
                         />
                     ))
                 }
@@ -171,7 +172,7 @@ export default function GameBoard(props){
                 <Divider orientation="left" />
 
                 <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }}>
-                    <Button onClick={startGame}>
+                    <Button onClick={() => showModal(true)}>
                         Start Game
                     </Button>
                 </Col>

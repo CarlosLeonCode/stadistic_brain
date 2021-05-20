@@ -54,12 +54,10 @@ export default function Game(){
         }
     }
 
-    const updateGameScores = () => {
+    function updateGameScores() {
         setAttemps(game.attemps)
         setPoints(game.points)
     }
-
-    console.log(game)
 
     return(
         <>
@@ -77,12 +75,12 @@ export default function Game(){
                     {
                         (game)
                         ? <GameBoard startGame={startGame} gameStarted={true} evaluate={evaluateRound} />
-                        : <GameBoard startGame={startGame} gameStarted={false} />
+                        : <GameBoard startGame={startGame} gameStarted={false} showModal={setShowModal}/>
                     }
                 </Content>
                 </Layout>
 
-                <Modal title="Basic Modal" visible={showModal} >
+                <Modal title="Basic Modal" visible={showModal} onOk={() => startGame()} onCancel={() => setShowModal(false)}>
                     <p>Some contents...</p>
                     <p>Some contents...</p>
                     <p>Some contents...</p>

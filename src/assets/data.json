@@ -2,6 +2,7 @@
     "exercises":{
         "combination":{
             "statement": "Hay 4 corredores en una carrera. Al terminar deben ganar 2 de los 4. Adivinar una de las posibles combinaciones.",
+            "long_statement": "Hay 4 corredores en una carrera. Al terminar deben ganar 2 de los 4. Adivinar una de las posibles combinaciones. Debes hallar las posibles combinaciones y adivinar cuál tiene el sistema.",
             "cases": [
                 ["Mario", "Bird"],
                 ["Mario", "Crash"],
