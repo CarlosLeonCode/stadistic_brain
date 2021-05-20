@@ -1,0 +1,46 @@
+.wrapper-sideContent{
+    color: white;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .title{
+        color: inherit;
+        opacity: 0.5;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .wrapper-details{
+        padding-top: 2rem;    
+
+        .detail-group{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            
+            span{
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .wrapper-footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p{
+            opacity: 0.3;
+            margin: 0.5rem;
+        }
+    }
+}

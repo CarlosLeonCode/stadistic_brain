@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+$color-1: #002329;
+$color-2: #006d75;
+$color-3: #e6fffb;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+
+  .ant-layout-sider{
+    background-color: $color-1;
+  }
+
+  .ant-layout{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.ant-card,
+.ant-card-body{
+  height: 100%;
+}

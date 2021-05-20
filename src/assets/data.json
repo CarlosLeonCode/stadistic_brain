@@ -1,0 +1,24 @@
+{
+    "exercises":{
+        "combination":{
+            "statement": "Hay 4 corredores en una carrera. Al terminar deben ganar 2 de los 4. Adivinar una de las posibles combinaciones.",
+            "cases": [
+                ["Mario", "Bird"],
+                ["Mario", "Crash"],
+                ["Mario", "Goomba"],
+                ["Bird", "Crash"],
+                ["Bird", "Goomba"],
+                ["Crash", "Goomba"]
+            ],
+            "question": "¿Qué probabilidad hay de el Goomba sea uno de los ganadores?",
+            "rta_question": 50
+        }
+    },
+
+    "runners":[
+        { "name": "Mario", "img_path": "https://i.pinimg.com/originals/7b/1a/9f/7b1a9f3a187f9a90c99292c5f1fbf35c.png" },
+        { "name": "Bird", "img_path": "https://i.pinimg.com/originals/5e/d3/b3/5ed3b3101c6da4caef441b867926ce9e.png" },
+        { "name": "Crash", "img_path": "https://i.pinimg.com/originals/e0/13/66/e01366d166e79f1095aa0b426f233422.png" },
+        { "name": "Goomba", "img_path": "https://i.imgur.com/LNh8WGr.png" }
+    ]
+}
