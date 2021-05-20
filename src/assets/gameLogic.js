@@ -47,8 +47,8 @@ export default class gameLogic{
             this.increaseAttemps()
         }
 // ! -------- Temporal
-        console.log(`answer ${response}`)
-        console.log(`real ${this.answer}`)
+        // console.log(`answer ${response}`)
+        // console.log(`real ${this.answer}`)
 
         // Build response 
         response = {

@@ -93,7 +93,6 @@ export default function GameBoard(props){
                             style={{ borderRadius: '8px', padding: '0.5rem' }}
                             src={character.img_path}
                             key={ character.name }
-                            preview={ false }
                         />
                     ))
                 }
@@ -170,12 +169,6 @@ export default function GameBoard(props){
                 </Col>
 
                 <Divider orientation="left" />
-
-                <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }}>
-                    <Button onClick={() => showModal(true)}>
-                        Start Game
-                    </Button>
-                </Col>
             </Row>
 
         </>
