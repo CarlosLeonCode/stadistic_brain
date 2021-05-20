@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 // components
-import { Card, Image, Row, Col, Divider, Tooltip, Button  } from 'antd';
+import { Card, Image, Row, Col, Divider, Tooltip, Button, Modal } from 'antd';
 // icons 
 import { QuestionCircleOutlined } from '@ant-design/icons'
 // Data 
@@ -8,18 +8,17 @@ import Data from '../../assets/data.json'
 // scss 
 import './gameBoard.scss'
 
+// Get data from json 
 const runners = Data.runners
 
 export default function GameBoard(props){
 
-    const { unknow, startGame, gameStarted, evaluate } = props
+    const { startGame, gameStarted, evaluate } = props
 
     // states 
     const [ roundAnswer, setRoundAnswer ] = useState([])
     const [ attempsHistory, setAttempsHistory ] = useState([])
     
-
-
     // Add characters to the answer, when image is clicked
     const addRunnerToAnswer = (e) => {
         const nodeTypeSelected = e.target.tagName
@@ -39,11 +38,13 @@ export default function GameBoard(props){
         }
     }
     
+    // Clear states and add history for a new round 
     const starNewRound = (data) => {
         setRoundAnswer([])
         addAttemp(data.first_pos, data.second_pos)
     }
 
+    // Add attemp history 
     const addAttemp = (first_char, second_char) => {
         if(first_char || second_char){
             setAttempsHistory([
@@ -114,19 +115,20 @@ export default function GameBoard(props){
                                 <Row>
                                     <Col sm={{ span: 24 }} md={{ span: 15 }}>
                                         <div className="wrapper-unknows">
-                                        {
-                                            unknow.map((character, index) => (
-                                                <Image
-                                                    width={80}
-                                                    style={{ borderRadius: '8px', padding: '0.5rem' }}
-                                                    src={character.img_path ? character.img_path : 'https://image.flaticon.com/icons/png/512/189/189665.png'}
-                                                    key={ character.name }
-                                                    preview={false}
-                                                    className="unkow_image unknow"
-                                                    id={`unknow_${index}`}
-                                                />
-                                            ))
-                                        }
+                                            <Image
+                                                width={80}
+                                                style={{ borderRadius: '8px', padding: '0.5rem' }}
+                                                src={'https://image.flaticon.com/icons/png/512/189/189665.png'}
+                                                preview={false}
+                                                className="unkow_image unknow"
+                                            />
+                                            <Image
+                                                width={80}
+                                                style={{ borderRadius: '8px', padding: '0.5rem' }}
+                                                src={'https://image.flaticon.com/icons/png/512/189/189665.png'}
+                                                preview={false}
+                                                className="unkow_image unknow"
+                                            />
                                         </div>
 
                                     </Col>
@@ -172,7 +174,6 @@ export default function GameBoard(props){
                     <Button onClick={startGame}>
                         Start Game
                     </Button>
-
                 </Col>
             </Row>
 

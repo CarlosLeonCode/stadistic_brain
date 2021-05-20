@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 // Components 
 import SideContent from '../../components/sideContent'
 import GameBoard from '../../components/gameBoard'
-import { Layout } from 'antd';
+import { Layout, Modal } from 'antd';
 
 // Logic game class 
 import GameKernel from '../../assets/gameLogic'
@@ -21,10 +21,8 @@ const { Sider, Content } = Layout;
 export default function Game(){
 
     // States
-    const [ unknow_answer, setUnknow_answer ] = useState([
-        { "name": "1", "img_path": "" },
-        { "name": "2", "img_path": "" }
-    ]);
+    const [ showModal, setShowModal ] = useState(false)
+
     // Intentos 
     const [ attemps, setAttemps ] = useState(0)
     const [ points, setPoints ] = useState(0)
@@ -78,11 +76,17 @@ export default function Game(){
                 <Content>
                     {
                         (game)
-                        ? <GameBoard unknow={unknow_answer} startGame={startGame} gameStarted={true} evaluate={evaluateRound} />
-                        : <GameBoard unknow={unknow_answer} startGame={startGame} gameStarted={false} />
+                        ? <GameBoard startGame={startGame} gameStarted={true} evaluate={evaluateRound} />
+                        : <GameBoard startGame={startGame} gameStarted={false} />
                     }
                 </Content>
                 </Layout>
+
+                <Modal title="Basic Modal" visible={showModal} >
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Modal>
             </Layout>
         </>
     )
