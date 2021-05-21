@@ -29,6 +29,10 @@ export default function GameBoard(props){
             const runnerName = e.target.parentNode.id.split('_')[1]
             // Validate elements on answer
             if(roundAnswer.length < 2){
+                // Keep runner zoom in 
+                e.target.parentNode.classList.add('selected')
+
+
                 // Add character to the answer 
                 setRoundAnswer([
                     ...roundAnswer,
@@ -42,6 +46,13 @@ export default function GameBoard(props){
     const starNewRound = (data) => {
         setRoundAnswer([])
         addAttemp(data.first_pos, data.second_pos)
+        // --
+        const imgs = document.querySelectorAll('.wrapper-chars-select .ant-image')
+        // --
+        imgs.forEach(node => {
+            node.classList.remove('selected')
+        })
+
     }
 
     // Add attemp history 

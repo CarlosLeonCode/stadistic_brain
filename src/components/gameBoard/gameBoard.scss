@@ -43,6 +43,47 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .ant-image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                transition: transform 0.3s;
+            }
+
+            &:before{
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
+                background-color: #006d75;
+                border-radius: 50%;
+                content: " ";
+                transform: translateY(5rem);
+                opacity: 0;
+                transition: transform .3s,
+                            opacity 0.2s;
+            }
+
+            &:hover{
+                img{
+                    transform: scale(1.4);
+                }
+
+
+                &::before{
+                    transform: translateY(3.5rem);
+                    opacity: 1;
+                }
+            }
+
+            &.selected{
+                img{
+                    transform: scale(1.4);
+                }
+            }
+        }
     }
 }
 

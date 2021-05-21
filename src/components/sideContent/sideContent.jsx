@@ -22,6 +22,17 @@ export default function SideContent(props){
                 <div className="detail-group">
                     <span>Puntos</span>: <span>{gamePoints}</span>
                 </div>
+
+                <div style={{ marginTop: '5rem', padding: '0.5rem' }}>
+                    <ul>
+                        <li>
+                            Frio es que ninguno de los elementos seleccionados se encuentra en el orden o no están en la respuesta.
+                        </li>
+                        <li>
+                            Tibio significa que unicamente 2 de ellas se encuentra en la respuesta y en la misma posición.
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <footer className="wrapper-footer">
